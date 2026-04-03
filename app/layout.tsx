@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="mx-72 my-6">{children}</div>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   )
