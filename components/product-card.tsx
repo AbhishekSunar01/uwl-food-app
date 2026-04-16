@@ -5,8 +5,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { foodItem } from "@/types/food-item"
 
-export default function ProductCard() {
+type ProductCardProps = {
+  foodItem: foodItem
+}
+
+export default function ProductCard({ foodItem }: ProductCardProps) {
   return (
     <Card className="relative w-full pt-0">
       <div className="absolute inset-0 z-30 h-60 bg-black/35" />
@@ -16,8 +21,8 @@ export default function ProductCard() {
         className="relative z-20 h-60 w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader className="">
-        <CardTitle>Fashionable Long Leather..</CardTitle>
-        <CardDescription>$ 10</CardDescription>
+        <CardTitle>{foodItem.foodName}</CardTitle>
+        <CardDescription>${foodItem.foodPrice}</CardDescription>
         <Button className="w-1/2">Add</Button>
       </CardHeader>
     </Card>
