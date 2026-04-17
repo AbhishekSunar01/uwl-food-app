@@ -3,4 +3,5 @@ export type foodItem = {
   foodName: string
   foodCategory: string
   foodPrice: number
+  imageUrl: string
 }
