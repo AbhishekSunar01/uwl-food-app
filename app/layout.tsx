@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Manrope } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -30,11 +31,13 @@ export default function RootLayout({
       )}
     >
       <body>
-        <Navbar />
-        <ThemeProvider>
-          <div className="mx-72 my-6">{children}</div>
-        </ThemeProvider>
-        <Footer />
+        <ClerkProvider>
+          <Navbar />
+          <ThemeProvider>
+            <div className="mx-72 my-6">{children}</div>
+          </ThemeProvider>
+          <Footer />
+        </ClerkProvider>
       </body>
     </html>
   )
