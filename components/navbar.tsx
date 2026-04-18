@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { User } from "lucide-react"
 import { Croissant } from "lucide-react"
 import Link from "next/link"
+import { SignInButton, SignUpButton, UserButton, Show } from "@clerk/nextjs"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,13 +39,21 @@ export default function Navbar() {
           <Link href="/" className="rounded px-3 py-2">
             Orders
           </Link>
-          <Link
-            href="/"
-            className="flex items-center gap-2 rounded-full bg-secondary px-3 py-2"
-          >
-            <User className="h-5 w-5" />
-            Abhishek
-          </Link>
+          <Show when="signed-out">
+            <SignInButton>
+              <button className="cursor-pointer rounded px-3 py-2">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton>
+              <button className="cursor-pointer rounded-full bg-primary px-4 py-2 font-medium text-primary-foreground">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
         </div>
       </div>
     </nav>
