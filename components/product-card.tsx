@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import AddToCartButton from "@/components/add-to-cart-button"
 import {
   Card,
   CardDescription,
@@ -24,7 +24,7 @@ export default function ProductCard({ foodItem }: ProductCardProps) {
       <CardHeader className="">
         <CardTitle>{foodItem.foodName}</CardTitle>
         <CardDescription>${foodItem.foodPrice}</CardDescription>
-        <Button className="w-1/2">Add</Button>
+        <AddToCartButton foodItemId={foodItem.foodId} />
       </CardHeader>
     </Card>
   )

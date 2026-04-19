@@ -4,7 +4,7 @@ import { foodItem } from "@/types/food-item"
 
 export default async function Page() {
   try {
-    const res = await fetch("http://51.21.131.235:8080/api/food-item")
+    const res = await fetch("http://51.21.131.235/api/food-item")
     const data = await res.json()
     console.log(data)
     return (
