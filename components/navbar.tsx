@@ -33,11 +33,8 @@ export default function Navbar() {
           <Link href="/" className="rounded px-3 py-2">
             Home
           </Link>
-          <Link href="/" className="rounded px-3 py-2">
-            Menu
-          </Link>
-          <Link href="/" className="rounded px-3 py-2">
-            Orders
+          <Link href="/cart" className="rounded px-3 py-2">
+            Cart
           </Link>
           <Show when="signed-out">
             <SignInButton>
