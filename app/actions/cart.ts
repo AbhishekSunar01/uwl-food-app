@@ -31,3 +31,28 @@ export async function addToCart(foodItemId: number, quantity: number = 1) {
   const data = await res.json()
   return { success: true, message: data.message, data: data.data }
 }
+
+export default async function getCartItems() {
+  const { userId } = await auth()
+  console.log("Clerk userId:", userId)
+
+  if (!userId) {
+    return {
+      success: false,
+      message: "You must be signed in to view cart items",
+    }
+  }
+
+  const res = await fetch(`${API_BASE}/api/cart`, {
+    headers: {
+      "X-User-Id": userId,
+    },
+  })
+
+  if (!res.ok) {
+    return { success: false, message: "Failed to fetch cart items" }
+  }
+
+  const data = await res.json()
+  return { success: true, data: data.data }
+}

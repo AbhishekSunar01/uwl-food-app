@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Croissant } from "lucide-react"
+import { Croissant, ShoppingCart } from "lucide-react"
 import Link from "next/link"
 import { SignInButton, SignUpButton, UserButton, Show } from "@clerk/nextjs"
 
@@ -33,11 +33,12 @@ export default function Navbar() {
           <Link href="/" className="rounded px-3 py-2">
             Home
           </Link>
-          <Link href="/" className="rounded px-3 py-2">
-            Menu
-          </Link>
-          <Link href="/" className="rounded px-3 py-2">
-            Orders
+          <Link
+            href="/cart"
+            className="flex items-center gap-2 rounded px-3 py-2"
+          >
+            <ShoppingCart width={20} height={20} />
+            Cart
           </Link>
           <Show when="signed-out">
             <SignInButton>
