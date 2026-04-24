@@ -7,7 +7,8 @@ export function Hero() {
         UWL Food Ordering, <br /> <span className="text-chart-3">Team 7</span>
       </h2>
       <p className="mx-auto max-w-xl text-center text-sm text-neutral-700 md:text-lg dark:text-neutral-400">
-        A food ordering app built with Next.js, Tailwind CSS, and shadcn/ui.
+        A food ordering app, anytime anywhere!! Study hard, eat well. Your
+        campus food hub.
       </p>
     </BackgroundLines>
   )
